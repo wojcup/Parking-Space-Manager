@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('parking_prices', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->enum('role',['guest', 'customer', 'admin'])->default('guest');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->enum('day_type',['weekday','weekend','bank_holiday'])->default('weekday');
+            $table->enum('season',['winter','summer'])->default('summer');
+            $table->unsignedDecimal('discount', 10, 2)->nullable();
+            $table->unsignedDecimal('price', 10, 2);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('parking_prices');
     }
 };

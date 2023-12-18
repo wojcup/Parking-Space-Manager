@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/London',
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'en_GB',
 
     /*
     |--------------------------------------------------------------------------
@@ -96,7 +96,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'en_GB',
 
     /*
     |--------------------------------------------------------------------------
@@ -109,7 +109,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'en_GB',
 
     /*
     |--------------------------------------------------------------------------
@@ -184,5 +184,18 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Custom Variables
+    |--------------------------------------------------------------------------
+    |
+    |*/
+    'app_version' => env('APP_VERSION', '1.0'),
+    'app_title' => env('APP_TITLE', 'Parking Space Manager'),
+    'minimum_booking_days_from_now' => env('MINIMUM_BOOKING_DAYS_FROM_NOW', 3),
+
+
 
 ];

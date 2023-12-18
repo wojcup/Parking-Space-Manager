@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('vehicle_id')->constrained('vehicles');
             $table->foreignId('parking_space_id')->constrained('parking_spaces');
+            $table->foreignId('booked_by_id')->constrained('users');
             $table->dateTime('from_date');
             $table->dateTime('to_date');
             $table->enum('status', ['active','cancelled'])->default('active');

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('label', 128);
             $table->text('description')->nullable();
-            $table->enum('status', ['available','reserved','maintenance'])->default('available');
+            $table->enum('status', ['available','reserved','maintenance','out of order'])->default('available');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
